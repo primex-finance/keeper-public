@@ -2,6 +2,10 @@
 
 Keepers play a critical role in the Primex ecosystem. In fact, they ensure the protocol’s security through liquidations and the decentralized execution of conditional orders.
 
+By downloading the official client and making a simple configuration, users can now take on the role of Keepers to help secure the protocol and earn rewards in exchange. Becoming a Keeper also presents a unique opportunity to earn Early Primex Token (ePMX) before the upcoming token generation event (TGE), which you will be able to exchange for Primex Token (PMX) after the TGE.
+
+You can see and claim the earned rewards on [this page](https://app.primex.finance/#/keeper-rewards). Keeper will automatically claim the rewards if its balance is lower than the threshold set in config.
+
 # How to use this image
 
 Create an `.env` file in the same directory. Configure .env parameters (see Keeper Configuration section). 
