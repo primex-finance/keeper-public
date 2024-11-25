@@ -13,17 +13,18 @@ Run with docker compose:
 
 # Prerequisites
 
-Docker engine is up and running. See https://docs.docker.com/engine/install/ Docker installation guide.
-.env file should be in the same directory as Docker image and properly configured as described below.
+Docker engine is up and running. See [Docker installation guide](https://docs.docker.com/engine/install/).
+
+`.env` file should be in the same directory as Docker image and properly configured as described below.
 
 Keeper’s should have enough native tokens on the balance in the blockchain that it will monitor to pay for gas. Note that Keeper’s address can be found in Keeper logs, during the start-up sequence.
 
 # Troubleshooting
 
-Linux/MacOS systems may require manual Docker daemon start. See https://docs.docker.com/engine/daemon/start/
+Linux/MacOS systems may require manual Docker daemon start. See [official docs](https://docs.docker.com/engine/daemon/start/).
 
-Windows may require WSL Update Package. See https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
-Windows may require hardware virtualization enabled in the BIOS. See https://docs.docker.com/desktop/troubleshoot/topics/#virtualization 
+Windows may require [WSL Update Package](https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)
+Windows may require [hardware virtualization enabled in the BIOS](https://docs.docker.com/desktop/troubleshoot/topics/#virtualization).
 
 # Keeper Configuration
 
@@ -36,8 +37,9 @@ Windows may require hardware virtualization enabled in the BIOS. See https://doc
 
 `PRIVATE_KEY` - Raw hex encoded private key. `KEY_PATH` and `PASSWORD_PATH` parameters are ignored if `PRIVATE_KEY` is set. 
 
+`ENSO_API_KEY` - API key for Enso swap router. You should generate and use your own Enso API key to have stable access to the routing API independently on the number of active keepers.
+
 ## Optional fields:
-`ENSO_API_KEY` - API key for Enso swap router. If there are too many keepers using the same key simultaneously, 
 
 `PAGINATION_COUNT` - Size of a chunk of items when loading positions or orders from the blockchain. Default value is 100.
 
@@ -51,10 +53,10 @@ Windows may require hardware virtualization enabled in the BIOS. See https://doc
 
 `ROUTERS` - Priority list of token swap routers. Keeper will switch to the next router in the list if previous router fails to estimate an exchange price. Default value is enso, paraswap.
 
-`PYTH_WS_URL` - Pyth oracle prices websocket URL. Default value is wss://hermes.pyth.network/ws.
+`PYTH_WS_URL` - Pyth oracle prices websocket URL. Default value is `wss://hermes.pyth.network/ws`.
 
-`PYTH_HTTP_URL`  - Pyth oracle HTTP URL for obtaining VAAs. Default value is https://hermes.pyth.network/v2/updates/price/latest.
+`PYTH_HTTP_URL`  - Pyth oracle HTTP URL for obtaining VAAs. Default value is `https://hermes.pyth.network/v2/updates/price/latest`.
 
 `NO_LOG_TIME` - Disable timestamps in console logs. Default value is false.
 
-`ARTIFACTS_PATH` - Path to the artifacts with contract ABIs. Default value is ./contracts/primex_artifacts/abis.
+`ARTIFACTS_PATH` - Path to the artifacts with contract ABIs. Default value is `./contracts/primex_artifacts/abis`.
