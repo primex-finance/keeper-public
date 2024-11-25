@@ -1,0 +1,12 @@
+services:
+  keeper:
+    image: primexfinance/keeper:latest
+    ports:
+      - :3000
+    env_file: .env
+    restart: always
+    volumes:
+      - contracts:/keeper_rs/contracts
+    platform: linux/amd64
+volumes:
+  contracts:
