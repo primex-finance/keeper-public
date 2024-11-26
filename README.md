@@ -6,6 +6,14 @@ By downloading the official client and making a simple configuration, users can 
 
 You can see and claim the earned rewards on [this page](https://app.primex.finance/#/keeper-rewards). Keeper will automatically claim the rewards if its balance is lower than the threshold set in config.
 
+# Prerequisites
+
+Docker engine is up and running, you can use Docker Desktop or Docker CLI. See Docker Desktop installation guides for [Linux](https://docs.docker.com/desktop/setup/install/linux/), [MacOS](https://docs.docker.com/desktop/setup/install/mac-install/), [Windows](https://docs.docker.com/desktop/setup/install/windows-install/).
+
+`.env` file should be in the same directory as Docker image and properly configured as described below.
+
+Keeper’s should have enough native tokens on the balance in the blockchain that it will monitor to pay for gas. Note that Keeper’s address can be found in Keeper logs, during the start-up sequence.
+
 # How to use this image
 
 Create an `.env` file in the project directory. Configure `.env` parameters (see [Keeper Configuration section](#keeper-configuration)). 
@@ -13,15 +21,6 @@ Create an `.env` file in the project directory. Configure `.env` parameters (see
 Run with docker compose:
 
 `docker compose up`
-
-
-# Prerequisites
-
-Docker engine is up and running. See [Docker installation guide](https://docs.docker.com/engine/install/).
-
-`.env` file should be in the same directory as Docker image and properly configured as described below.
-
-Keeper’s should have enough native tokens on the balance in the blockchain that it will monitor to pay for gas. Note that Keeper’s address can be found in Keeper logs, during the start-up sequence.
 
 # Troubleshooting
 
