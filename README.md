@@ -32,7 +32,10 @@ Windows may require [hardware virtualization enabled in the BIOS](https://docs.d
 # Keeper Configuration
 
 ## Mandatory fields:
-`NODE_ADDRESS` - RPC provider to access the blockchain. Only websocket URLs are supported. Currently supported blockchains: Ethereum, Arbitrum, Polygon. Note, one keeper client can monitor only one network, to monitor multiple networks, you should launch multiple keepers.
+`NODE_ADDRESS` - RPC provider to access the blockchain. Only websocket URLs are supported. Currently supported blockchains: Ethereum, Arbitrum, Polygon. One keeper client can monitor only one network, to monitor multiple networks, you should launch multiple keepers. 
+
+Note that not all RPCs are suitable for hosting Keepers. For example, most free public RPCs have strict restrictions in place that are not enough for the thoroughput that Keeper expects. We recommend using private paid RPCs with high limits.
+
 
 -----
 
