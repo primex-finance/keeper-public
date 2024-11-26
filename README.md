@@ -39,7 +39,7 @@ Note that not all RPCs are suitable for hosting Keepers. For example, most free 
 
 -----
 
-There are two ways to set ypur private key:
+There are two ways to set your private key:
 
 1) Private key in raw format
    
