@@ -8,7 +8,7 @@ You can see and claim the earned rewards on [this page](https://app.primex.finan
 
 # How to use this image
 
-Create an `.env` file in the same directory. Configure .env parameters (see Keeper Configuration section). 
+Create an `.env` file in the project directory. Configure `.env` parameters (see [Keeper Configuration section](#keeper-configuration)). 
 
 Run with docker compose:
 
@@ -51,7 +51,7 @@ There are two ways to set ypur private key:
 
 ----
 
-`ENSO_API_KEY` - API key for Enso swap router. You should generate and use your own Enso API key to have stable access to the routing API independently on the number of active keepers.
+`ENSO_API_KEY` - API key for Enso swap router. Generate your API key [here](https://shortcuts.enso.finance/developers).
 
 ## Optional fields:
 
