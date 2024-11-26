@@ -33,13 +33,23 @@ Windows may require [hardware virtualization enabled in the BIOS](https://docs.d
 # Keeper Configuration
 
 ## Mandatory fields:
-`NODE_ADDRESS` - RPC provider to access the blockchain. Only websocket URLs are supported.
+`NODE_ADDRESS` - RPC provider to access the blockchain. Only websocket URLs are supported. Currently supported blockchains: Ethereum, Arbitrum, Polygon. Note, one keeper client can monitor only one network, to monitor multiple networks, you should launch multiple keepers.
 
-`KEY_PATH` - Path to the .json wallet file. The wallet should be password protected.
+-----
+
+There are two ways to set ypur private key:
+
+1) Private key in raw format
+   
+`PRIVATE_KEY` - Raw hex encoded private key. `KEY_PATH` and `PASSWORD_PATH` parameters are ignored if `PRIVATE_KEY` is set. 
+
+2) Private key protected with password
+
+`KEY_PATH` - Path to the .json wallet file. The wallet should be password protected. See the [key generation guide](https://geth.ethereum.org/docs/fundamentals/account-management) to learn more.
 
 `PASSWORD_PATH` - Path to the text file with the wallet password. If `KEY_PATH` is set and `PASSWORD_PATH` is not set, the keeper will require to enter the password manually.
 
-`PRIVATE_KEY` - Raw hex encoded private key. `KEY_PATH` and `PASSWORD_PATH` parameters are ignored if `PRIVATE_KEY` is set. 
+----
 
 `ENSO_API_KEY` - API key for Enso swap router. You should generate and use your own Enso API key to have stable access to the routing API independently on the number of active keepers.
 
@@ -55,7 +65,7 @@ Windows may require [hardware virtualization enabled in the BIOS](https://docs.d
 
 `SNAPSHOT_STORAGE_DEPTH` - Store this amount of blockchain data copies. Allows to process blockchain reorgs up to this depth. Default value is 32.
 
-`ROUTERS` - Priority list of token swap routers. Keeper will switch to the next router in the list if previous router fails to estimate an exchange price. Default value is enso, paraswap.
+`ROUTERS` - Priority list of token swap routers. Keeper will switch to the next router in the list if previous router fails to estimate an exchange price. Default value is `enso,paraswap`.
 
 `PYTH_WS_URL` - Pyth oracle prices websocket URL. Default value is `wss://hermes.pyth.network/ws`.
 
@@ -64,3 +74,7 @@ Windows may require [hardware virtualization enabled in the BIOS](https://docs.d
 `NO_LOG_TIME` - Disable timestamps in console logs. Default value is false.
 
 `ARTIFACTS_PATH` - Path to the artifacts with contract ABIs. Default value is `./contracts/primex_artifacts/abis`.
+
+`SUPRA_URL` - Supra oracle URL. Default value is `https://rpc-mainnet-dora-2.supra.com/get_proof`.
+
+`SUPRA_POLLING_INTERVAL_SEC` - Supra oracle polling interval in seconds. Default value is 45.
