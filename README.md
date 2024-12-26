@@ -18,9 +18,12 @@ Keeper’s should have enough native tokens on the balance in the blockchain tha
 
 Create an `.env` file in the project directory. Configure `.env` parameters (see [Keeper Configuration section](#keeper-configuration)). 
 
-Run with docker compose:
+Get the latest image and run with docker compose:
 
-`docker compose up`
+```
+docker compose pull
+docker compose up
+```
 
 # Troubleshooting
 
